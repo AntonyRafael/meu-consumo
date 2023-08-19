@@ -13,16 +13,22 @@ export default function AcessoNegado() {
       pageTitle="Acesso negado"
     >
       <div className={styles.main}>
-        <img src={AccessDeniedPerson} alt="Pessoa representado acesso negado"/>
+        <img src={AccessDeniedPerson} alt="Pessoa representado acesso negado" />
         <div className={styles.text}>
-            <span >Ops... Você não tem permissão para acessar esse recurso.</span>
-            <span className={styles.linkWrapper}>
-                Faça
-                <Link className={styles.link} to="/login"> Login </Link>
-                ou
-                <Link className={styles.link} to="/cadastrar">  Cadastre-se </Link>
-            </span>
-        </div>  
+          <span>Ops... Você não tem permissão para acessar esse recurso.</span>
+          <span className={styles.linkWrapper}>
+            Faça
+            <Link className={styles.link} to="/login">
+              {" "}
+              Login{" "}
+            </Link>
+            ou
+            <Link className={styles.link} to="/cadastrar">
+              {" "}
+              Cadastre-se{" "}
+            </Link>
+          </span>
+        </div>
       </div>
     </AppLayout>
   );
