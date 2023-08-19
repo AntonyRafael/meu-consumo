@@ -7,8 +7,6 @@
   height: 42px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
-  // background: #fff;
-  /* border: 3px solid #fff; */
 
   .menuBtnBurguer {
     width: 40px;
@@ -77,19 +75,22 @@
         text-decoration: none;
         font-weight: bold;
         font-size: 1.2rem;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          color: #ccc;
+        }
       }
     }
 
     .userInfoContent {
       margin-top: 1rem;
       p {
-        font-size: 0.875rem;
         text-align: start;
       }
 
       span {
         display: block;
-        font-size: 0.75rem;
         text-align: start;
       }
     }
@@ -128,10 +129,9 @@
     }
   }
 
-
   .footer {
     text-align: center;
-    font-size: .875rem;
+    font-size: 0.875rem;
   }
 }
 
