@@ -1,14 +1,10 @@
+import { ButtonHTMLAttributes } from "react";
 import styles from "./styles.module.scss";
 
-interface IButtonProps {
-  children?: React.ReactNode;
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  className?: string;
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   rounded?: boolean;
   fullWidth?: boolean;
   textColor?: string;
-  tabIndex?: number;
-  disabled?: boolean;
   backgroundColor?: string;
 }
 
@@ -16,25 +12,26 @@ const Button = ({
   children,
   onClick,
   className,
-  rounded,
-  fullWidth,
-  textColor,
-  backgroundColor,
-  tabIndex,
-  disabled,
+  rounded = false,
+  fullWidth = false,
+  textColor = "white",
+  backgroundColor = "#1C575E",
+  tabIndex = -1,
+  disabled = false,
   ...props
 }: IButtonProps) => {
   return (
     <button
-      className={`${styles.button} ${disabled ? styles.disabled : " "} ${className}`}
-      tabIndex={0}
+      className={`${styles.button} ${disabled && styles.disabled} ${className}`}
+      tabIndex={tabIndex}
       style={{
-        borderRadius: rounded ? "25px" : "8",
+        borderRadius: rounded ? "25px" : "8px",
         width: fullWidth ? "100%" : "auto",
-        color: textColor ? textColor : "white",
-        backgroundColor: backgroundColor ? backgroundColor : "#1C575E",
+        color: textColor,
+        backgroundColor,
       }}
       onClick={onClick}
+      disabled={disabled}
       {...props}
     >
       {children}
