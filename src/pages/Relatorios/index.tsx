@@ -32,11 +32,11 @@ export default function ConsumoAgua() {
     const dataList = JSON.parse(data ? data : '[]');
     if (consumType !== 'AMBOS') {
       setConsumData(dataList.filter((it: ConsumData) => it.type === consumType));
-      setTotalValue(dataList.map((it: ConsumData) => +it.value.replace('R$', '')).reduce((total: number, num: number) => total + num ));
+      setTotalValue(dataList.map((it: ConsumData) => +it.value.replace('R$', '').replace(',', '.')).reduce((total: number, num: number) => total + num ));
       return;
     }
     setConsumData(dataList);
-    setTotalValue(dataList.map((it: ConsumData) => +it.value.replace('R$', '')).reduce((total: number, num: number) => total + num ));
+    setTotalValue(dataList.map((it: ConsumData) => +it.value.replace('R$', '').replace(',', '.')).reduce((total: number, num: number) => total + num ));
   };
   return (
     <AppLayout
@@ -126,7 +126,7 @@ export default function ConsumoAgua() {
               </tbody>
             </table>
 
-            <h3> Total: R$ { totalValue.toFixed(2) }</h3>
+            <h3> Total: R$ { totalValue.toFixed(2).replace('.', ',') }</h3>
           </div>
         ) : ''}
       </div>
