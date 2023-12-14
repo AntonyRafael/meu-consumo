@@ -126,7 +126,7 @@ export default function ConsumoAgua() {
               </tbody>
             </table>
 
-            <h3> Total: R$ { totalValue.toFixed(2).replace('.', ',') }</h3>
+            <h3> Total: R$ { totalValue.toFixed(2) }</h3>
           </div>
         ) : ''}
       </div>
