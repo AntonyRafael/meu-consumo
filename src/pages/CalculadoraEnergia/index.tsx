@@ -49,9 +49,9 @@ export default function CalculadoraEnergia() {
   const saveData = () => {
     
     const consumData: ConsumData = {
-      consum: `${consumPerHour.toFixed(3)} watts`,
+      consum: `${consumPerHour.toFixed(3).replace('.', ',')} watts`,
       date: dataAtualFormatada(),
-      value: `R$ ${price.toFixed(3)}`,
+      value: `R$ ${price.toFixed(3).replace('.', ',')}`,
       type: ConsumptionTypeEnum.ENERGIA,
     }
     ConsumDataService.setData(consumData);
@@ -105,12 +105,12 @@ export default function CalculadoraEnergia() {
 
       <div className={styles.costWrapper}>
         <p className={styles.cost}>
-          Valor <span>R$ {price ? `${price.toFixed(3)}` : "00,000"}</span>
+          Valor <span>R$ {price ? `${price.toFixed(3).replace('.', ',')}` : "00,000"}</span>
         </p>
         <p className={styles.watts}>
           Consumo{" "}
           <span>
-            {consumPerHour ? consumPerHour.toFixed(3) : "0,000"}kw/h
+            {consumPerHour ? consumPerHour.toFixed(3).replace('.', ',') : "0,000"}kw/h
           </span>
         </p>
       </div>

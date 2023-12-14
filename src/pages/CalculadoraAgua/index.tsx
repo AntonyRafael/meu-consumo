@@ -50,9 +50,9 @@ export default function CalculadoraAgua() {
 
   const saveData = () => {
     const data : ConsumData = {
-      consum: `${consumPerMinute.toFixed(3)} l/min`,
+      consum: `${consumPerMinute.toFixed(3).replace('.', ',')} l/min`,
       date: dataAtualFormatada(),
-      value: `R$ ${price.toFixed(3)} `,
+      value: `R$ ${price.toFixed(3).replace('.', ',')} `,
       type: ConsumptionTypeEnum.AGUA,
     }
     ConsumDate.setData(data);
@@ -106,12 +106,12 @@ export default function CalculadoraAgua() {
 
       <div className={styles.costWrapper}>
         <p className={styles.cost}>
-          Valor <span>R$ {price ? `${price.toFixed(3)}` : "00,000"}</span>
+          Valor <span>R$ {price ? `${price.toFixed(3).replace('.', ',')}` : "00,00"}</span>
         </p>
         <p className={styles.watts}>
           Consumo{" "}
           <span>
-            {consumPerMinute ? consumPerMinute.toFixed(3) : "0,000"}L/min
+            {consumPerMinute ? consumPerMinute.toFixed(3).replace('.', ',').replace('.', ',') : "0,00"}L/min
           </span>
         </p>
       </div>

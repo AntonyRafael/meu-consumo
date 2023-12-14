@@ -72,9 +72,9 @@ export default function Home() {
 
   const saveData = () => {
     const consumData: ConsumData = {
-      consum: `${consumPerhour.toFixed(3)} watts`,
+      consum: `${consumPerhour.toFixed(3).replace('.', ',')} watts`,
       date: dataAtualFormatada(),
-      value: `R$ ${price.toFixed(3)}`,
+      value: `R$ ${price.toFixed(3).replace('.', ',')}`,
       type: ConsumptionTypeEnum.ENERGIA,
     }
     ConsumDataService.setData(consumData);
@@ -161,12 +161,12 @@ export default function Home() {
             </span>
           </h3>
           <p className={styles.cost}>
-            Valor <span>R$ {price ? `${price.toFixed(3)}` : "00,000"}</span>
+            Valor <span>R$ {price ? `${price.toFixed(3).replace('.', ',')}` : "00,000"}</span>
           </p>
           <p className={styles.watts}>
             Consumo{" "}
             <span>
-              {consumPerhour ? consumPerhour.toFixed(3) : "0,000"}Kw/h
+              {consumPerhour ? consumPerhour.toFixed(3).replace('.', ',') : "0,000"}Kw/h
             </span>
           </p>
         </div>

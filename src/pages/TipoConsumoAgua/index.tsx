@@ -59,9 +59,9 @@ export default function TipoConsumoAgua({ type, icon, pageSubtitle }: Props) {
 
   const saveData = () => {
     const data : ConsumData = {
-      consum: `${consumPerMinute.toFixed(3)} l/min`,
+      consum: `${consumPerMinute.toFixed(3).replace('.', ',')} l/min`,
       date: dataAtualFormatada(),
-      value: `R$ ${price.toFixed(3)} `,
+      value: `R$ ${price.toFixed(3).replace('.', ',')} `,
       type: ConsumptionTypeEnum.AGUA,
     }
     ConsumDataService.setData(data);
@@ -109,12 +109,12 @@ export default function TipoConsumoAgua({ type, icon, pageSubtitle }: Props) {
             </span>
           </h3>
           <p className={styles.cost}>
-            Valor <span>R$ {price ? `${price.toFixed(3)}` : "00,000"}</span>
+            Valor <span>R$ {price ? `${price.toFixed(3).replace('.', ',')}` : "00,000"}</span>
           </p>
           <p className={styles.watts}>
             Consumo{" "}
             <span>
-              {consumPerMinute ? consumPerMinute.toFixed(3) : "0,000"}L/min
+              {consumPerMinute ? consumPerMinute.toFixed(3).replace('.', ',') : "0,000"}L/min
             </span>
           </p>
         </div>
