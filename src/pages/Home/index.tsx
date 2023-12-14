@@ -47,8 +47,8 @@ export default function Home() {
         borderRadius: "10px",
         color: "#fff"
       }}>
-        Aqui tem uma dica muito foda sobre agua como por exemplo.
-        A cada 5 minutos de uso, você gasta um pouco de água.
+        Mantenha-se hidratado de forma sustentável! Além de consumir água regularmente, considere reutilizar garrafas, 
+        investir em um filtro de água para reduzir o uso de garrafas plásticas
       </div>
     </AppLayout>
   );
